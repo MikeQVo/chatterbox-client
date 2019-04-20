@@ -3,17 +3,14 @@ var MessageView = {
   render: function(message){
 
     var {username, text, roomname} = message;
-    // this.$('messageContainer').append( _.template(
-      
-      
-var template =  `<div class="chat">
-                            <div class="username">${username}</div>
-                            <div>${text}</div>
-                          </div>`
-    return template
-    // ));
+    
+    var template = `<div class="chat">
+                      <div class="username">${username}</div>
+                      <div>${text}</div>
+                    </div>`
+    return template;
+    
   }
-
 };
 
 // var MessageView = {

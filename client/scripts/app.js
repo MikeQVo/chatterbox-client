@@ -24,10 +24,10 @@ var App = {
   
   //add a setInterval to this to do so 
   fetch: function(callback = ()=>{    //fetch(callback())  function(parse.readall() )
-    //spinner
+   
   }) {
     Parse.readAll((data) => {
-
+      console.log('received data')
       var messageArray = data.results.slice();
 
       for(var i = 0; i < 20; i++) {

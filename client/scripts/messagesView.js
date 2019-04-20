@@ -25,7 +25,7 @@ var MessagesView = {
   },
 
   renderMessage: function(message){
-
+    //prehaps do escape here https://underscorejs.org/#escape
    this.$chats.append(`<div class="messageContainer">${MessageView.render(message)}</div>`);
 
     
