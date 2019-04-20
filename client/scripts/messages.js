@@ -1,27 +1,23 @@
 var Messages = {
 
-  //Filter message using regex look for "<scri" && reject <img src=x onerror="function(){
-
-  // }"
-      //prehaps do escape here https://underscorejs.org/#escape
-
-// messageListner: function() {
-//   $('input').onSubmit( (e)=> {
-//     e.preventDefault();
-//     Messages.text = e.target.value();
-//     Message.username = App.username;
-//     Message.roomname = Room.roomname;
-//   })
-// }
+  text: null,
+  username: null,
+  roomname: null
   
-  username:  'scarface',
-  text:  "Boom goes the dynamite",
-  roomname:  'Detroit'
 };
-// console.log("THIS is ", Messages["0"])
 
-//listen for click events on message input
-  //get text, user, room from dom {username, text, roomname}
-//parse into  { }
-//send message information to APP
+Messages.formListener = function() {
 
+  $("#send").on('submit' ,(function(event){
+  
+    event.preventDefault();
+    var text = $('#message').val();
+    Messages.text = _.escape(text)
+    Messages.username = window.location.search.substr(10)
+    Messages.room = window.RoomsView.$select.text()
+    window.App.post(() => console.log('message submitted!!! ', Messages));
+    window.App.fetch((()=> window.App.initialize()));
+    // window.App.initialize()
+  }));
+
+}

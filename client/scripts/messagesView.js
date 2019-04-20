@@ -1,45 +1,25 @@
 var MessagesView = {
 
   $chats: $('#chats'),
-
+  
   initialize: function() {
-    
+    this.$chats.append('<div class="messageContainer"></div>');
   },
 
-  render: function(message) {
-    // renderMessage: func => MessageView
-  /*messagesCotainer   <div class = $(room.name)Box>
-      foreach MessageView.render
-    </div>
-      */
-    //username - text
-     
-
-  //   this.$chats.append(`<div class="chat">
-  //   <div class="username">${username}</div>
-  //   <div>${text}</div>
-  //  </div>`);
-
-
-    
-  },
-
-  renderMessage: function(message){
+  renderMessage: function(messageArray){
     //prehaps do escape here https://underscorejs.org/#escape
-   this.$chats.append(`<div class="messageContainer">${MessageView.render(message)}</div>`);
-
+    // console.log(messageArray)
+    var htmlString = '';
+    for(var i = 0; i < 20; i++) {
+      // console.log(messageArray[i])
+      htmlString+=(`<div class="message">${MessageView.render(messageArray[i])}</div>`);
+      // console.log(htmlString)
+    };
+    // console.log(htmlString)
+    $('.messageContainer').html(htmlString);
     
   }
 
 
 };
 
-// var message1 = {
-//   username: 'Mel Brooks',
-//   text: 'Never underestimate the power of the Schwartz!',
-//   roomname: 'lobby'
-// };
-
-
-// |- - - - - - - - --  -- - - - - -|
-// hi im twitter [submit]

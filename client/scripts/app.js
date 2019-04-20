@@ -8,15 +8,14 @@ var App = {
 
   initialize: function() {
     App.username = window.location.search.substr(10);
-    console.log("username", App.username)
+ 
     FormView.initialize();
     RoomsView.initialize("Home"); //set user unique 
     MessagesView.initialize();
-
     // Fetch initial batch of messages
     App.startSpinner();
     App.fetch(App.stopSpinner);
-    // App.post(console.log('sucess'))
+
     
     
   },
@@ -27,17 +26,11 @@ var App = {
    
   }) {
     Parse.readAll((data) => {
-      console.log('received data')
       var messageArray = data.results.slice();
 
-      for(var i = 0; i < 20; i++) {
-        MessagesView.renderMessage(messageArray[i]);
-      }
+      MessagesView.renderMessage(messageArray);
+    
   
-
-       
-
-      
     // send this information  messagesView
     // update messagesView or messageView MessagesView.render()
       // examine the response from the server request:
@@ -57,10 +50,6 @@ var App = {
       callback();
     });
   },
-
-
-  
-  
   
   startSpinner: function() {
     App.$spinner.show();

@@ -1,7 +1,7 @@
 var MessageView = {
 
   render: function(message){
-
+    console.log(message);
     var {username, text, roomname} = message;
     
     var template = `<div class="chat">
