@@ -3,21 +3,20 @@ var App = {
   $spinner: $('.spinner img'),
 
   username: 'anonymous',
-
-
   
+
 
   initialize: function() {
     App.username = window.location.search.substr(10);
     console.log("username", App.username)
     FormView.initialize();
-    RoomsView.initialize();
+    RoomsView.initialize("Home"); //set user unique 
     MessagesView.initialize();
 
     // Fetch initial batch of messages
     App.startSpinner();
     App.fetch(App.stopSpinner);
-    App.post(Messages, alert('sucess'))
+    // App.post(console.log('sucess'))
     
     
   },
@@ -28,7 +27,16 @@ var App = {
     //spinner
   }) {
     Parse.readAll((data) => {
-        console.log(data)
+
+      var messageArray = data.results.slice();
+
+      for(var i = 0; i < 20; i++) {
+        MessagesView.renderMessage(messageArray[i]);
+      }
+  
+
+       
+
       
     // send this information  messagesView
     // update messagesView or messageView MessagesView.render()
@@ -43,13 +51,15 @@ var App = {
   // add: function()
   post: function(callback = ()=>{ 
   }) {
-    Parse.create((message) => {
+    Parse.create(Messages, function() {
       
 
       callback();
     });
   },
 
+
+  
   
   
   startSpinner: function() {

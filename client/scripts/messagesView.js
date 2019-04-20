@@ -3,7 +3,7 @@ var MessagesView = {
   $chats: $('#chats'),
 
   initialize: function() {
-
+    
   },
 
   render: function(message) {
@@ -31,14 +31,18 @@ var MessagesView = {
     this.$chats.append(`<div class="chat">
     <div class="username">${username}</div>
     <div>${text}</div>
-   </div>`);
+    </div>`);
   }
 
 
 };
 
-var message1 = {
-  username: 'Mel Brooks',
-  text: 'Never underestimate the power of the Schwartz!',
-  roomname: 'lobby'
-};
+// var message1 = {
+//   username: 'Mel Brooks',
+//   text: 'Never underestimate the power of the Schwartz!',
+//   roomname: 'lobby'
+// };
+
+
+// |- - - - - - - - --  -- - - - - -|
+// hi im twitter [submit]

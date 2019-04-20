@@ -8,11 +8,12 @@ var Messages = {
 //     Message.roomname = Room.roomname;
 //   })
 // }
-
-  text:  "Say helloWorld to my little friend",
-  username:  "scarface",
-  roomname: "chiacago"
+  
+  username:  'scarface',
+  text:  "Boom goes the dynamite",
+  roomname:  'Detroit'
 };
+// console.log("THIS is ", Messages["0"])
 
 //listen for click events on message input
   //get text, user, room from dom {username, text, roomname}
