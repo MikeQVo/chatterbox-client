@@ -4,7 +4,7 @@ var RoomsView = {
   $select: $('#rooms select'),
 
   initialize: function(roomname) {
-    this.$select.append(`<option value="${roomname}">${roomname}</option>`)
+    this.$select.prepend(`<option value="${roomname}">${roomname}</option>`)
 
   },
 

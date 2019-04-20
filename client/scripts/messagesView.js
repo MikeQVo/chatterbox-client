@@ -3,7 +3,7 @@ var MessagesView = {
   $chats: $('#chats'),
   
   initialize: function() {
-    this.$chats.append('<div class="messageContainer"></div>');
+    this.$chats.html('<div class="messageContainer"></div>');
   },
 
   renderMessage: function(messageArray){
@@ -16,7 +16,7 @@ var MessagesView = {
       // console.log(htmlString)
     };
     // console.log(htmlString)
-    $('.messageContainer').html(htmlString);
+    $('.messageContainer').append(htmlString);
     
   }
 

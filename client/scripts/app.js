@@ -28,6 +28,7 @@ var App = {
     Parse.readAll((data) => {
       var messageArray = data.results.slice();
 
+      console.log(messageArray, ' Data we\'re sending to renderer');
       MessagesView.renderMessage(messageArray);
     
   
@@ -43,6 +44,7 @@ var App = {
   //POST request 
   // add: function()
   post: function(callback = ()=>{ 
+    
   }) {
     Parse.create(Messages, function() {
       
@@ -61,3 +63,4 @@ var App = {
     FormView.setStatus(false);
   }
 };
+
