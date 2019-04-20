@@ -1,7 +1,14 @@
 var Rooms = { //listens to event handlers and ONLY send information to app on it's intentions
 //1create  - listen & send room to app
 
-  allRooms: ["home"]
+  add: function(roomName) {
+    window.App.addNewRoom(roomName)
+
+ },
+
+  restore: function(roomName) {
+    
+  }
   
     //prehaps do escape here https://underscorejs.org/#escape
 
@@ -20,3 +27,13 @@ var Rooms = { //listens to event handlers and ONLY send information to app on it
     }
 
 */
+
+$('#rooms button').on('click', ()=>{
+  var roomString = _.escape(prompt("Please provide the room name"))
+  Rooms.add(roomString)
+})
+
+$('#rooms select').on('change', (e)=>{
+  var valueSelected = $(e.target).find("option:selected").val();
+  Room.restore(valueSelected)
+})

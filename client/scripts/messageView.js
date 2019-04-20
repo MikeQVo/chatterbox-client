@@ -5,8 +5,8 @@ var MessageView = {
     var {username, text, roomname} = message;
     
     var template = `<div class="chat">
-                      <div class="username">${username}</div>
-                      <div>${text}</div>
+                      <div class="username ${_.escape(username)}">${_.escape(username)}</div>
+                      <div>${_.escape(text)}</div>
                     </div>`
     return template;
     
