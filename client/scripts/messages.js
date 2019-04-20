@@ -1,5 +1,10 @@
 var Messages = {
 
+  //Filter message using regex look for "<scri" && reject <img src=x onerror="function(){
+
+  // }"
+      //prehaps do escape here https://underscorejs.org/#escape
+
 // messageListner: function() {
 //   $('input').onSubmit( (e)=> {
 //     e.preventDefault();

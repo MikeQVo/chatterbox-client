@@ -26,12 +26,9 @@ var MessagesView = {
 
   renderMessage: function(message){
 
-  const { username, text, roomname} = message; 
+   this.$chats.append(`<div class="messageContainer">${MessageView.render(message)}</div>`);
 
-    this.$chats.append(`<div class="chat">
-    <div class="username">${username}</div>
-    <div>${text}</div>
-    </div>`);
+    
   }
 
 

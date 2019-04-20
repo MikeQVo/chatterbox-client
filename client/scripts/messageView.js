@@ -1,12 +1,39 @@
 var MessageView = {
 
-  render: _.template(`
-      <!--
-      <div class="chat">
-        <div class="username"></div>
-        <div></div>
-      </div>
-      -->
-    `)
+  render: function(message){
+
+    var {username, text, roomname} = message;
+    // this.$('messageContainer').append( _.template(
+      
+      
+var template =  `<div class="chat">
+                            <div class="username">${username}</div>
+                            <div>${text}</div>
+                          </div>`
+    return template
+    // ));
+  }
 
 };
+
+// var MessageView = {
+
+//   render: _.template(`
+//       <!--
+//       <div class="chat">
+//         <div class="username"></div>
+//         <div></div>
+//       </div>
+//       -->
+//     `)
+
+// };
+
+
+// const { username, text, roomname} = message; 
+
+// this.$chats.append(`<div class="chat">
+// <div class="username">${username}</div>
+// <div>${text}</div>
+// </div>`);
+
