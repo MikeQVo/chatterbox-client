@@ -6,8 +6,8 @@ var Rooms = { //listens to event handlers and ONLY send information to app on it
 
  },
 
-  restore: function(roomName) {
-    
+  restoreRoomChat: function(roomName) {
+    window.App.changeRoom(roomName);
   }
   
     //prehaps do escape here https://underscorejs.org/#escape
@@ -35,5 +35,5 @@ $('#rooms button').on('click', ()=>{
 
 $('#rooms select').on('change', (e)=>{
   var valueSelected = $(e.target).find("option:selected").val();
-  Room.restore(valueSelected)
+  Rooms.restoreRoomChat(valueSelected)
 })

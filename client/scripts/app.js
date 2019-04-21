@@ -20,17 +20,16 @@ var App = {
   
   
   //add a setInterval to this to do so 
-  fetch: function(callback = ()=>{    //fetch(callback())  function(parse.readall() )
+  fetch: function(callback= ()=>{    //fetch(callback())  function(parse.readall() )
        
   }) {
     Parse.readAll((data) => {
       var messageArray = data.results.slice();
-
       for(let i=0; i<21; i++){
         MessagesView.renderMessage(messageArray[i])
       }
-     Friends.addListener()
-      callback();
+    
+      callback()
     });
  
   },
@@ -38,11 +37,11 @@ var App = {
   //POST request 
   // add: function()
   post: function(callback = ()=>{ 
-    
+      
   }) {
     Parse.create(Messages, function() {
-      
-
+      MessagesView.initialize();
+      App.fetch();
       callback();
     });
   },
@@ -68,9 +67,28 @@ var App = {
       Friends.toggleStatus(friendName);
       App.friendsList.push(friendName);
     } 
-    
-    
-    console.log(App.friendsList)
+  },
+
+  changeRoom: function(roomname) {
+    console.log("roomname is ", roomname)
+    console.log("WHALE HELO THERE")
+    MessagesView.initialize()
+    Parse.readAll((data) => {
+      var messageArray = data.results.slice();
+      // var filtered = messageArray.filter((message)=>{
+      //   return message.roomname === roomname;
+      // })
+
+     
+      for(let i=0; i < messageArray.length; i++){
+        console.log("!!!!!!!!")
+        
+        if(messageArray[i].roomname === roomname){
+          console.log("!!!!!!", messageArray[i])
+          MessagesView.renderMessage(messageArray[i])
+        } 
+      }
+    });
   }
 };
 

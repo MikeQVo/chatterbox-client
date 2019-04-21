@@ -4,8 +4,8 @@ var MessageView = {
     // console.log(message);
     var {username, text, roomname} = message;
     
-    var template = `<div class="chat">
-                      <div class="username ${_.escape(username)}">${_.escape(username)}</div>
+    var template = `<div class="chat ${roomname}">
+                      <div class="username ${_.escape(username)}">${_.escape(username)}</div> MessagesView.initialize()
                       <div>${_.escape(text)}</div>
                     </div>`
     return template;

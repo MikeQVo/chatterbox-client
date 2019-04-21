@@ -15,9 +15,11 @@ var Messages = {
     var text = $('#message').val();
     Messages.text = _.escape(text)
     Messages.username = window.location.search.substr(10)
-    Messages.room = window.RoomsView.$select.text()
+    Messages.roomname = window.RoomsView.$select.val()
     // window.App.post(() => console.log('we posted a message', Messages.text));
-    window.App.post(() => window.App.fetch(() =>{console.log('refreshing messages')}));
+    window.App.post(() => MessagesView.renderMessage(Messages) )
+    
+    // window.App.fetch(() =>{console.log('refreshing messages')}));
  
   }));
 

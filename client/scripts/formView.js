@@ -9,7 +9,6 @@ console.log('this is where the formView is')
   },
 
   handleSubmit: function(event) {
-    console.log(event.target)
     // Stop the browser from submitting the form
     event.preventDefault();
   //  var name = event.target.value;
